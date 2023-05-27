@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/account-cocktail-service/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/account-cocktail-service/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/account-cocktail-service",
+  "projects": {
+    "account-cocktail-service": {
+      "type": "application",
+      "root": "apps/account-cocktail-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/account-cocktail-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/account-cocktail-service/tsconfig.app.json"
+      }
+    },
+    "ingredient-cocktail-service": {
+      "type": "application",
+      "root": "apps/ingredient-cocktail-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/ingredient-cocktail-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/ingredient-cocktail-service/tsconfig.app.json"
+      }
+    }
+  }
+}
