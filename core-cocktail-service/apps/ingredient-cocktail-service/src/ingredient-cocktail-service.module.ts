@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { IngredientCocktailServiceController } from './ingredient-cocktail-service.controller';
 import { IngredientCocktailServiceService } from './ingredient-cocktail-service.service';
-import { ClientsModule, Transport } from '@nestjs/microservices';
 import { CoctailsModule } from './modules/coctails/coctails.module';
 import { IngredientsModule } from './modules/ingredients/ingredients.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
@@ -12,9 +11,6 @@ import { DataSource } from 'typeorm';
 
 @Module({
   imports: [
-    ClientsModule.register([
-      { name: 'ACCOUNT_COCKTAIL_SERVICE', transport: Transport.TCP },
-    ]),
     CoctailsModule,
     IngredientsModule,
     ConfigModule.forRoot({ isGlobal: true }),

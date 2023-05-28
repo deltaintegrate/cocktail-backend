@@ -1,25 +1,14 @@
-import { IsDate, IsEmail, IsNotEmpty, MinLength } from 'class-validator';
+import { PartialType } from '@nestjs/mapped-types';
+import { IsNotEmpty, MaxLength, MinLength } from 'class-validator';
+import { LoginAuthDto } from './login-auth.dto';
 
-export class CreateUserDto {
+export class CreateUserDto extends PartialType(LoginAuthDto) {
   @IsNotEmpty()
   @MinLength(5)
   full_name: string;
 
   @IsNotEmpty()
-  @IsEmail()
-  email: string;
-
-  @IsNotEmpty()
-  @MinLength(8)
-  password: string;
-
-  @IsNotEmpty()
-  @MinLength(8)
+  @MinLength(10)
+  @MaxLength(13)
   phone: string;
-
-  @IsDate()
-  created_at: Date;
-
-  @IsDate()
-  updated_at: Date;
 }

@@ -12,7 +12,7 @@ export class CoctailsService {
     private coctailsRepository: Repository<Coctail>,
   ) {}
   create(createCoctailDto: CreateCoctailDto) {
-    return this.coctailsRepository.create(createCoctailDto);
+    return this.coctailsRepository.save(createCoctailDto);
   }
 
   findAll(): Promise<Coctail[]> {

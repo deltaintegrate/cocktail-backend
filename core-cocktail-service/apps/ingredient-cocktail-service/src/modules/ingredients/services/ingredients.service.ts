@@ -12,7 +12,7 @@ export class IngredientsService {
     private ingredientRepository: Repository<Ingredient>,
   ) {}
   create(createIngredientDto: CreateIngredientDto) {
-    return this.ingredientRepository.create(createIngredientDto);
+    return this.ingredientRepository.save(createIngredientDto);
   }
 
   findAll(): Promise<Ingredient[]> {

@@ -18,7 +18,7 @@ export class User {
 
   @Column({
     type: 'varchar',
-    length: 25,
+    length: 60,
     nullable: false,
     default: '',
   })
@@ -26,7 +26,7 @@ export class User {
 
   @Column({
     type: 'varchar',
-    length: 25,
+    length: 60,
     nullable: false,
     default: '',
   })
@@ -34,7 +34,6 @@ export class User {
 
   @Column({
     type: 'varchar',
-    length: 20,
     nullable: false,
     default: '',
   })
