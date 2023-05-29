@@ -24,7 +24,7 @@ export class Role {
 
   @Column({
     nullable: false,
-    default: true,
+    default: false,
   })
   is_deleted: boolean;
 
